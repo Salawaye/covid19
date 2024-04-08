@@ -5,7 +5,7 @@
 		"type": "HttpServer",
 		"typeProperties": {
 			"url": "https://github.com/Salawaye/covid19/blob/Raw_Data/cases_deaths.csv",
-			"enableServerCertificateValidation": true,
+			"enableServerCertificateValidation": false,
 			"authenticationType": "Anonymous"
 		}
 	}
