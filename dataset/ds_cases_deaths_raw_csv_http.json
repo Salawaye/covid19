@@ -5,12 +5,20 @@
 			"referenceName": "ls_http_opendata_ecdc_europa_eu",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"RelativeURL:": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "HttpServerLocation",
-				"relativeUrl": "Salawaye/covid19/blob/Raw_Data/cases_deaths.csv"
+				"relativeUrl": {
+					"value": "@dataset().RelativeURL:",
+					"type": "Expression"
+				}
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
