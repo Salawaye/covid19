@@ -20,8 +20,7 @@
 			"recurrence": {
 				"frequency": "Minute",
 				"interval": 15,
-				"startTime": "2024-04-10T01:19:00",
-				"endTime": "2024-04-11T00:11:00",
+				"startTime": "2024-04-10T01:20:00",
 				"timeZone": "W. Central Africa Standard Time"
 			}
 		}
