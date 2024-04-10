@@ -19,12 +19,6 @@
 		},
 		"tr_ingest_population_data_properties_typeProperties_scope": {
 			"value": "/subscriptions/89dce660-f007-4747-a637-e24d6fc9941d/resourceGroups/covid-reporting-rg/providers/Microsoft.Storage/storageAccounts/covidreportingsaias"
-		},
-		"tri_hospital_admissions_ingest_data_properties_pl_ingest_ecdcs_data_parameters_sourceRelativeURL": {
-			"value": "Salawaye/covid19/blob/Raw_Data/hospital_admissions.csv"
-		},
-		"tri_hospital_admissions_ingest_data_properties_pl_ingest_ecdcs_data_parameters_sinkFileName": {
-			"value": "hospital_admissions.csv"
 		}
 	}
 }
