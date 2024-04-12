@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Data flow1",
+				"name": "Hospital Admission Pipeline",
 				"type": "ExecuteDataFlow",
 				"dependsOn": [],
 				"policy": {
