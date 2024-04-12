@@ -11,6 +11,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": "56 - dim-date.csv",
+				"folderPath": "dim_date",
 				"fileSystem": "lookup"
 			},
 			"columnDelimiter": ",",
