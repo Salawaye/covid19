@@ -476,7 +476,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": "cases_deaths.csv",
-						"folderPath": "ecdc",
+						"folderPath": "ecdc/cases_deaths",
 						"fileSystem": "raw"
 					},
 					"columnDelimiter": ",",
@@ -570,6 +570,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": "46 - country-lookup.csv",
+						"folderPath": "dim_country",
 						"fileSystem": "lookup"
 					},
 					"columnDelimiter": ",",
@@ -619,6 +620,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": "56 - dim-date.csv",
+						"folderPath": "dim_date",
 						"fileSystem": "lookup"
 					},
 					"columnDelimiter": ",",
@@ -695,7 +697,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "41 - github-ecdc-file-list.json",
+						"fileName": "70 - ecdc-file-list.json",
 						"container": "configs"
 					}
 				},
@@ -839,7 +841,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": "hospital_admissions.csv",
-						"folderPath": "ecdc",
+						"folderPath": "ecdc/hospital_admissions",
 						"fileSystem": "raw"
 					},
 					"columnDelimiter": ",",
