@@ -1108,9 +1108,11 @@
 						"     columnNaming: '$V_$N',",
 						"     lateral: true) ~> pivotDaily",
 						"pivotWeekly sort(desc(reported_year_week, true),",
-						"     asc(country, true)) ~> sortWeekly",
+						"     asc(country, true),",
+						"     partitionBy('hash', 1)) ~> sortWeekly",
 						"pivotDaily sort(desc(reported_date, true),",
-						"     asc(country, true)) ~> sortDaily",
+						"     asc(country, true),",
+						"     partitionBy('hash', 1)) ~> sortDaily",
 						"sortWeekly select(mapColumn(",
 						"          country,",
 						"          country_code_2_digit,",
@@ -1140,18 +1142,24 @@
 						"     skipDuplicateMapOutputs: true) ~> selectDaily",
 						"selectWeekly sink(allowSchemaDrift: true,",
 						"     validateSchema: false,",
+						"     partitionFileNames:['weekly_hospital_admission'],",
+						"     truncate: true,",
 						"     umask: 0022,",
 						"     preCommands: [],",
 						"     postCommands: [],",
 						"     skipDuplicateMapInputs: true,",
-						"     skipDuplicateMapOutputs: true) ~> sinkWeekly",
+						"     skipDuplicateMapOutputs: true,",
+						"     partitionBy('hash', 1)) ~> sinkWeekly",
 						"selectDaily sink(allowSchemaDrift: true,",
 						"     validateSchema: false,",
+						"     partitionFileNames:['daily_hospital Admission'],",
+						"     truncate: true,",
 						"     umask: 0022,",
 						"     preCommands: [],",
 						"     postCommands: [],",
 						"     skipDuplicateMapInputs: true,",
-						"     skipDuplicateMapOutputs: true) ~> sinkDaily"
+						"     skipDuplicateMapOutputs: true,",
+						"     partitionBy('hash', 1)) ~> sinkDaily"
 					]
 				}
 			},
@@ -1295,13 +1303,13 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/pl_process_cases_deaths_data')]",
+			"name": "[concat(parameters('factoryName'), '/pl_hospital_admission')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"activities": [
 					{
-						"name": "Data Flow Pipeline",
+						"name": "Hospital Admission Pipeline",
 						"type": "ExecuteDataFlow",
 						"dependsOn": [],
 						"policy": {
@@ -1314,13 +1322,15 @@
 						"userProperties": [],
 						"typeProperties": {
 							"dataflow": {
-								"referenceName": "df_transform_cases_deaths",
+								"referenceName": "df_hospital_admission_transformation",
 								"type": "DataFlowReference",
 								"parameters": {},
 								"datasetParameters": {
-									"CasesAndDeathSource": {},
-									"dfLookupCountry": {},
-									"CasesDeathsSink": {}
+									"HospitalAdmissionSource": {},
+									"sourceLookup": {},
+									"DimDateSource": {},
+									"sinkWeekly": {},
+									"sinkDaily": {}
 								}
 							},
 							"staging": {},
@@ -1338,7 +1348,7 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/dataflows/df_transform_cases_deaths')]"
+				"[concat(variables('factoryId'), '/dataflows/df_hospital_admission_transformation')]"
 			]
 		}
 	]
