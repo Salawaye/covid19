@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText1",
+	"name": "ds_cases_deaths_df_source",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_adls_covidreportingdl",
@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "46 - case-deaths-uk-ind-only.csv",
+				"fileName": "cases_deaths.csv",
 				"folderPath": "ecdc",
 				"fileSystem": "raw"
 			},
