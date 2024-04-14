@@ -6,15 +6,8 @@
 		"type": "AzureDatabricks",
 		"typeProperties": {
 			"domain": "https://adb-3081981151339691.11.azuredatabricks.net",
-			"newClusterNodeType": "Standard_DS3_v2",
-			"newClusterNumOfWorker": "1",
-			"newClusterSparkEnvVars": {
-				"PYSPARK_PYTHON": "/databricks/python3/bin/python3"
-			},
-			"newClusterVersion": "10.4.x-scala2.12",
-			"clusterOption": "Fixed",
-			"newClusterInitScripts": [],
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDZGMDYxNzM4LTM4QTYtNDZFQy05MUU3LUJBOTZEMTEyNEQ1NV8wZTI0M2I1Mi0yZjdlLTQ0ZGEtYjQyOS1hN2IwODMyMjUzMmEiDQp9"
+			"existingClusterId": "0414-233718-in2msjc1",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDZGMDYxNzM4LTM4QTYtNDZFQy05MUU3LUJBOTZEMTEyNEQ1NV9hM2ZmODAxZC0wOWNjLTQ5MTgtOGU3MS03MDE3NzA3MjM0NDIiDQp9"
 		}
 	}
 }
