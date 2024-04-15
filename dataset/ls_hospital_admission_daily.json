@@ -1,0 +1,12 @@
+{
+	"name": "ls_hospital_admission_daily",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_sql_coviddb",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}
